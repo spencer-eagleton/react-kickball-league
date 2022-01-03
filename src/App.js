@@ -7,6 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <header>
+        <NavLink to="/" exact>
+          Home
+        </NavLink>
         <NavLink to="/teams" exact>
           Teams
         </NavLink>
@@ -15,9 +18,9 @@ function App() {
         </NavLink>
       </header>
       <Switch>
-        <Route component={Home} exact />
-        <Route component={Teams} exact />
-        <Route component={Players} exact />
+        <Route path="/" component={Home} exact />
+        <Route path="/teams" component={Teams} exact />
+        <Route path="/players" component={Players} exact />
       </Switch>
     </BrowserRouter>
   );
