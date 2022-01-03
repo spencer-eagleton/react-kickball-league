@@ -11,6 +11,12 @@ export default function Teams() {
     };
     fetchData();
   }, []);
-  console.log(teams);
-  return <div>teams</div>;
+  return (
+    <div>
+      <h1>Teams</h1>
+      {teams.map((team) => (
+        <h3 key={team.name}>{team.name}</h3>
+      ))}
+    </div>
+  );
 }
