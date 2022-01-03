@@ -1,11 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Hello</header>
-    </div>
+    <BrowserRouter>
+      <header>
+        <NavLink to="/teams">Teams</NavLink>
+        <NavLink to="/players">Players</NavLink>
+      </header>
+      <Switch>
+        <Route></Route>
+        <Route></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
