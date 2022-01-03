@@ -5,6 +5,7 @@ function App() {
   return (
     <BrowserRouter>
       <header>
+        <NavLink to="/">Home</NavLink>
         <NavLink to="/teams">Teams</NavLink>
         <NavLink to="/players">Players</NavLink>
       </header>
