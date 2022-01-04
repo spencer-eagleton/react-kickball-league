@@ -17,7 +17,7 @@ export default function Teams() {
     <div>
       <h1>Teams</h1>
       {teams.map((team) => (
-        <Link to={`./Teams/${team.id}`} key={team.name}>
+        <Link to={`./teams/${team.id}`} key={team.name}>
           {team.name}
         </Link>
       ))}
