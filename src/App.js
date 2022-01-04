@@ -19,6 +19,7 @@ function App() {
       </header>
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/teams/:id" exact />
         <Route path="/teams" component={Teams} exact />
         <Route path="/players" component={Players} exact />
       </Switch>
