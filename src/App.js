@@ -4,6 +4,7 @@ import Teams from './Views/Teams/Teams';
 import Players from './Views/Players/Players';
 import Home from './Views/Home/Home';
 import TeamDetail from './Views/TeamDetail/TeamDetail';
+import PlayerDetail from './Views/PlayerDetail/PlayerDetail';
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/teams/:id" component={TeamDetail} exact />
         <Route path="/teams" component={Teams} exact />
+        <Route path="/players/:id" component={PlayerDetail} exact />
         <Route path="/players" component={Players} exact />
       </Switch>
     </BrowserRouter>

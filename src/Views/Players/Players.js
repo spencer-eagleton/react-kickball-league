@@ -15,7 +15,9 @@ export default function Players() {
   return (
     <div>
       {players.map((player) => (
-        <Link key={player.id}>{player.name}</Link>
+        <Link to={`./players/${player.id}`} key={player.id}>
+          {player.name}
+        </Link>
       ))}
     </div>
   );
