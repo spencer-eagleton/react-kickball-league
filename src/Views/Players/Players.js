@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchPlayers } from '../../services/players';
-import { Link } from 'react-router-dom';
+import PlayerDetail from '../PlayerDetail/PlayerDetail';
 
 export default function Players() {
   const [players, setPlayers] = useState([]);
@@ -15,9 +15,7 @@ export default function Players() {
   return (
     <div>
       {players.map((player) => (
-        <Link to={`./players/${player.id}`} key={player.id}>
-          {player.name}
-        </Link>
+        <PlayerDetail key={player.id} {...player} />
       ))}
     </div>
   );
