@@ -3,8 +3,8 @@ import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 import Teams from './Views/Teams/Teams';
 import Players from './Views/Players/Players';
 import Home from './Views/Home/Home';
-import TeamDetail from './Views/TeamDetail/TeamDetail';
-import PlayerDetail from './Views/PlayerDetail/PlayerDetail';
+import TeamDetail from './Components/TeamDetail/TeamDetail';
+import PlayerDetail from './Components/PlayerDetail/PlayerDetail';
 function App() {
   return (
     <BrowserRouter>

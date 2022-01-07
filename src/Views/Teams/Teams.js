@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { fetchTeams } from '../../services/teams';
-import TeamDetail from '../TeamDetail/TeamDetail';
+import TeamList from '../../Components/TeamList/TeamList';
 
 export default function Teams() {
   const [teams, setTeams] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeams();
 
-      setTeams(data);
+      await setTeams(data);
     };
     fetchData();
   }, []);
@@ -17,7 +18,7 @@ export default function Teams() {
     <div>
       <h1>Teams</h1>
       {teams.map((team) => (
-        <TeamDetail key={team.id} {...team} />
+        <TeamList key={team.id} {...team} />
       ))}
     </div>
   );
