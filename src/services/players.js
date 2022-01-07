@@ -6,6 +6,6 @@ export async function fetchPlayers() {
 }
 
 export async function fetchPlayersByTeam(id) {
-  const resp = await client.from('players').select('*').eq('team_id', id);
+  const resp = await client.from('players').select('*, teams(*)').match({ id });
   return checkError(resp);
 }
