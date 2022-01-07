@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
 import { fetchPlayers } from '../../services/players';
-import PlayerDetail from '../../Components/PlayerDetail/PlayerDetail';
-
-export default function Players(props) {
+import PlayerList from '../../Components/PlayerList/PlayerList';
+export default function Players() {
   const [players, setPlayers] = useState([]);
-
-  const id = props.match.params.id;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,12 +10,12 @@ export default function Players(props) {
       setPlayers(data);
     };
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <div>
       {players.map((player) => (
-        <PlayerDetail key={player.id} {...player} />
+        <PlayerList key={player.id} {...player} />
       ))}
     </div>
   );
