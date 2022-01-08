@@ -19,7 +19,6 @@ export default function Team(props) {
 
   return (
     <>
-      <p>hel</p>
       <PlayerDetail player={player} />
     </>
   );
