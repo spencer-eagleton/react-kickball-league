@@ -7,7 +7,7 @@ export default function TeamDetail({ team }) {
         {team.name}
         {team.city}
       </p>
-      {team.map((player) => (
+      {team.players.map((player) => (
         <PlayerList key={player.id} {...player} />
       ))}
     </>
