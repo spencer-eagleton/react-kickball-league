@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
-
-export default function PlayerDetail({ player, name, id }) {
+export default function PlayerDetail({ player }) {
   return (
-    <Link to={`./players/${id}`} key={player}>
-      {name}
-    </Link>
+    <>
+      <h1>Player Detail</h1>
+      <p key={player.id}>{player.name}</p>
+      <p>{player.position}</p>
+    </>
   );
 }

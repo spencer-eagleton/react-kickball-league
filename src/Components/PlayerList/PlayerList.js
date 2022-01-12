@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 
 export default function PlayerList({ id, name }) {
-  return <Link to={`/players/${id}`}>{name}</Link>;
+  return (
+    <p>
+      <Link to={`/players/${id}`}>{name}</Link>
+    </p>
+  );
 }

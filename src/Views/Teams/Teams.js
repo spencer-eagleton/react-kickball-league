@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchTeams } from '../../services/teams';
-import TeamList from '../../Components/TeamList/TeamList';
+import Team from '../../Components/Team/Team';
+import { Link } from 'react-router-dom';
 
 export default function Teams() {
   const [teams, setTeams] = useState([]);
@@ -21,7 +22,9 @@ export default function Teams() {
     <div>
       <h1>Teams</h1>
       {teams.map((team) => (
-        <TeamList key={team.id} {...team} />
+        <Link key={team.id} to={`/team-detail/${team.id}`}>
+          <Team {...team} />
+        </Link>
       ))}
     </div>
   );

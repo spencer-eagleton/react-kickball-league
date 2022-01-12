@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react';
-import { fetchPlayers, fetchPlayersByTeam } from '../../services/players';
+import { fetchPlayers } from '../../services/players';
+import { Link } from 'react-router-dom';
 import PlayerList from '../../Components/PlayerList/PlayerList';
-export default function Players(props) {
-  const [players, setPlayers] = useState([]);
-  const id = props.match.params.id;
 
+export default function Players() {
+  const [players, setPlayers] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      if (id) {
-        const data = await fetchPlayersByTeam(id);
-        setPlayers(data);
-      } else {
-        const data = await fetchPlayers();
-        setPlayers(data);
-      }
+      const data = await fetchPlayers();
+      setPlayers(data);
+      setLoading(false);
     };
     fetchData();
-  }, [id]);
+  }, []);
+
+  if (loading) return <h1>loading...</h1>;
 
   return (
     <div>
       {players.map((player) => (
-        <PlayerList key={player.id} {...player} />
+        <Link key={player.id} to={`/players/${player.id}`}>
+          <PlayerList {...player} />
+        </Link>
       ))}
     </div>
   );
